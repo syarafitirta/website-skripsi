@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kopi dimedja - Dashboard Category</title>
+    <link rel="stylesheet" href="../style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="../javascript/category.js"></script>
+    <script src="../javascript/auth.js"></script>
+  </head>
+  <body id="dashbboard">
+    <!-- Start Nav -->
+    <nav class="section-navbar navbar-dashboard" id="navbar">
+      <section class="navbar-left">
+        <a href="./productDashboard.html">
+          <img src="../assets/logo_small.svg" alt="kopi dimedja" />
+        </a>
+      </section>
+      <div class="menu-mobile" id="show-nav">
+        <img src="../assets/icon_menu.svg" alt="menu" />
+      </div>
+      <section class="navbar-right" id="navbar">
+        <img
+          src="../assets/icon_menu_close.svg"
+          alt="menu"
+          class="icon_menu_close"
+          id="hide-nav"
+        />
+        <a href="./productDashboard.html">product</a>
+        <a href="./categoryDashboard.html">category</a>
+        <button
+          class="transparant-green"
+          type="button"
+          onclick="logoutUser('categoryDashboard.html')"
+        >
+          Logout
+        </button>
+      </section>
+    </nav>
+    <!-- Start End -->
+
+    <main class="dashbboard">
+      <!-- Start Title -->
+      <section class="dashboard-title">
+        <div class="dashboard-title-top">
+          <h2>category</h2>
+          <button class="button-dashboard green" id="modalOpen">add new</button>
+        </div>
+      </section>
+      <!-- End Title -->
+
+      <!-- Start Tabel -->
+      <table class="table-category">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Total Product</th>
+            <th>Icon</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody id="data-category"></tbody>
+      </table>
+      <!-- End Tabel -->
+
+      <section id="modal-add"></section>
+      <section id="modal-edit"></section>
+      <section id="modal-delete"></section>
+    </main>
+  </body>
+</html>
