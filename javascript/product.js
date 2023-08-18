@@ -6,7 +6,9 @@ token = JSON.parse(token).token;
 
 async function getProduct(category, searchData) {
   const response = await fetch(`${base_url_server}/product`);
-  
+
+  console.log(searchData);
+
   let data = [];
   let data_res = await response.json();
 
@@ -76,7 +78,7 @@ async function getProduct(category, searchData) {
 
 async function addProduct() {
   const name = document.getElementById("name").value;
-  const category = document.getElementById("data-category").value;
+  const category = document.getElementById("list-category").value;
   const price = document.getElementById("price").value;
   const link = document.getElementById("link").value;
   const picture = document.getElementById("picture").files[0];
@@ -119,6 +121,19 @@ async function getCategory() {
   });
 }
 
+async function listCategory() {
+  const response = await fetch(`${base_url_server}/category`);
+  const data = await response.json();
+
+  let listCategory = document.getElementById("list-category");
+
+  data.map((item, index) => {
+    return (listCategory.innerHTML += `
+        <option key=${index} value=${item.id}>${item.name}</option>
+        `);
+  });
+}
+
 function saveIDProduct(item) {
   localStorage.setItem("idProduct", item);
   window.location =
@@ -140,7 +155,7 @@ window.addEventListener("load", async function () {
 
   let category = "";
 
-  dataCategory.addEventListener("click", function () {
+  dataCategory?.addEventListener("click", function () {
     category = dataCategory.value;
     console.log(category);
     if (category == "All Categories") {
@@ -154,6 +169,8 @@ window.addEventListener("load", async function () {
     `${base_url_server}/product/detail?id=${id}`
   );
   const response_categori = await fetch(`${base_url_server}/category`);
+
+  console.log(response_product);
 
   const data_product = await response_product.json();
   const data_category = await response_categori.json();
@@ -325,5 +342,5 @@ if (href == "productDashboard.html") {
   getProduct();
   getCategory();
 } else if (href == "productAdd.html") {
-  getCategory();
+  listCategory();
 }
