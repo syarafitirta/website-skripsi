@@ -75,11 +75,14 @@ async function addCategory() {
         token,
       },
     };
-
+    
+    
     await axios.post(`${base_url_server}/category/with_image`, body, setting);
+    window.location.reload("Refresh");
   } else {
   }
 }
+
 
 async function getCategory() {
   const response_no_product = await fetch(`${base_url_server}/category`);
