@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login Admin Kopi Dimedja</title>
+    <link rel="stylesheet" href="../style.css" />
+    <script src="../javascript/auth.js"></script>
+  </head>
+  <body>
+    <section class="page-login">
+      <!-- Start Form -->
+      <form class="login-form" id="form" onsubmit="loginUser(event)">
+        <img src="../assets/logo_small.svg" alt="logo" />
+        <h2>admin login</h2>
+        <div class="login-input">
+          <label for="username">username</label>
+          <input type="text" id="username" placeholder="username" />
+        </div>
+        <div class="login-input">
+          <label for="password">password</label>
+          <input type="password" id="password" placeholder="password" />
+        </div>
+        <p id="alert-login"></p>
+        <button class="transparant-green">login</button>
+      </form>
+      <!-- End Form -->
+    </section>
+  </body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kopi dimedja - Dashboard Product</title>
+    <link rel="stylesheet" href="../style.css" />
+    <script src="../javascript/product.js"></script>
+    <script src="../javascript/auth.js"></script>
+  </head>
+  <body id="dashbboard">
+    <!-- Start Nav -->
+    <nav class="section-navbar navbar-dashboard" id="navbar">
+      <section class="navbar-left">
+        <a href="./productDashboard.html">
+          <img src="../assets/logo_small.svg" alt="kopi dimedja" />
+        </a>
+      </section>
+      <div class="menu-mobile" id="show-nav">
+        <img src="../assets/icon_menu.svg" alt="menu" />
+      </div>
+      <section class="navbar-right" id="navbar">
+        <img
+          src="../assets/icon_menu_close.svg"
+          alt="menu"
+          class="icon_menu_close"
+          id="hide-nav"
+        />
+        <a href="./productDashboard.html">product</a>
+        <a href="./categoryDashboard.html">category</a>
+        <button
+          class="transparant-green"
+          type="button"
+          onclick="logoutUser('productDashboard.html')"
+        >
+          Logout
+        </button>
+      </section>
+    </nav>
+    <!-- Start End -->
+
+    <main class="dashbboard">
+      <!-- Start Title -->
+      <section class="dashboard-title">
+        <div class="dashboard-title-top">
+          <h2>Product</h2>
+          <a href="./productAdd.html">
+            <button class="button-dashboard green">Add New</button>
+          </a>
+        </div>
+        <div class="dashboard-title-bottom">
+          <select id="data-category">
+            <option hidden>All Categories</option>
+          </select>
+          <div>
+            <input type="text" placeholder="Search" />
+            <img src="../assets/icon_search.svg" alt="search" />
+          </div>
+          <p>Total: <span id="data-total"></span></p>
+        </div>
+      </section>
+      <!-- End Title -->
+
+      <!-- Start Tabel -->
+      <table class="table-product">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Category</th>
+            <th>Price</th>
+            <th>Picture</th>
+            <th>Link</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody id="data-product"></tbody>
+      </table>
+      <!-- End Tabel -->
+
+      <!-- Modal -->
+      <section id="modal-delete"></section>
+    </main>
+  </body>
+</html>

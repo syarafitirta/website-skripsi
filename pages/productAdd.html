@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kopi dimedja - Add Product</title>
+    <link rel="stylesheet" href="../style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="../javascript/product.js"></script>
+    <script src="../javascript/auth.js"></script>
+  </head>
+  <body id="dashbboard">
+    <!-- Start Nav -->
+    <nav class="section-navbar navbar-dashboard" id="navbar">
+      <section class="navbar-left">
+        <a href="./productDashboard.html">
+          <img src="../assets/logo_small.svg" alt="kopi dimedja" />
+        </a>
+      </section>
+      <div class="menu-mobile" id="show-nav">
+        <img src="../assets/icon_menu.svg" alt="menu" />
+      </div>
+      <section class="navbar-right" id="navbar">
+        <img
+          src="../assets/icon_menu_close.svg"
+          alt="menu"
+          class="icon_menu_close"
+          id="hide-nav"
+        />
+        <a href="./productDashboard.html">product</a>
+        <a href="./categoryDashboard.html">category</a>
+        <button
+          class="transparant-green"
+          type="button"
+          onclick="logoutUser('productAdd.html')"
+        >
+          Logout
+        </button>
+      </section>
+    </nav>
+    <!-- Start End -->
+
+    <main class="dashbboard">
+      <!-- Start Title -->
+      <section class="dashboard-title">
+        <div class="dashboard-title-top">
+          <h2>Product</h2>
+        </div>
+      </section>
+      <!-- End Title -->
+
+      <!-- Start form -->
+      <form class="dashbord-form">
+        <div class="dashbord-input">
+          <label for="name">Name</label>
+          <input type="text" id="name" placeholder="Input name here..." />
+        </div>
+        <div class="dashbord-input">
+          <label for="data-category">Category</label>
+          <select id="data-category">
+            <option hidden>Select Category</option>
+          </select>
+        </div>
+        <div class="dashbord-input">
+          <label for="price">Price</label>
+          <input type="text" id="price" placeholder="Input price here..." />
+        </div>
+        <div class="dashbord-input">
+          <label for="link">Link</label>
+          <input type="text" id="link" placeholder="Input link here..." />
+        </div>
+        <div class="dashbord-input">
+          <label>Picture</label>
+          <label for="picture">
+            <img src="../assets/blank_pic.svg" alt="blank pic" id="output" />
+          </label>
+          <p class="alert-picture">*upload new photo here with maximum 2MB</p>
+          <input
+            type="file"
+            id="picture"
+            placeholder="Input picture here..."
+            onchange="loadFile(event)"
+          />
+        </div>
+        <div class="dashbboard-input-button">
+          <button
+            class="button-dashboard green"
+            type="button"
+            onclick="addProduct()"
+          >
+            save
+          </button>
+          <a href="./productDashboard.html">
+            <button class="button-dashboard white" type="button">cancel</button>
+          </a>
+        </div>
+      </form>
+      <!-- End Form -->
+    </main>
+  </body>
+</html>
